@@ -377,7 +377,7 @@ const NewLandingPage = () => {
                 </div>
               </div>
               <a
-                href="https://github.com"
+                href="https://github.com/auwalrg8/Sabi"
                 className="github-link"
                 target="_blank"
                 rel="noopener noreferrer"
