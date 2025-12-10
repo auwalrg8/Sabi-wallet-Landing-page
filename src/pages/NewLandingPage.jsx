@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./NewLandingPage.css";
+import mockupLeft from "../../assets/images/Wallet mockup 1.png";
+import mockupRight from "../../assets/images/Wallet mockup 1-1.png";
 
 const WAITLIST_API_URL = "/api/waitlist";
 
@@ -111,12 +113,12 @@ const NewLandingPage = () => {
             <div className="hero-mockups">
               <div className="mockup-container">
                 <img
-                  src="/assets/images/Wallet mockup 1.png"
+                  src={mockupLeft}
                   alt="Sabi Wallet Dashboard"
                   className="wallet-mockup mockup-left"
                 />
                 <img
-                  src="/assets/images/Wallet mockup 1-1.png"
+                  src={mockupRight}
                   alt="Sabi Wallet Buy Bitcoin"
                   className="wallet-mockup mockup-right"
                 />
