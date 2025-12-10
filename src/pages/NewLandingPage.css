@@ -319,6 +319,22 @@
   .mockup-container {
     scale: 0.6;
   }
+
+  .features-section,
+  .cities-section,
+  .opensource-section,
+  .waitlist-section,
+  .balance-section {
+    padding: 48px 16px;
+  }
+
+  .features-grid {
+    gap: 16px;
+  }
+
+  .footer-socials {
+    flex-wrap: wrap;
+  }
 }
 
 /* Features Section */
@@ -1462,5 +1478,53 @@
     flex-direction: column;
     gap: 16px;
     text-align: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section,
+  .features-section,
+  .cities-section,
+  .opensource-section,
+  .waitlist-section,
+  .balance-section {
+    padding: 56px 16px;
+  }
+
+  .hero-title {
+    font-size: 40px;
+    line-height: 44px;
+  }
+
+  .hero-buttons {
+    gap: 12px;
+  }
+
+  .feature-card {
+    padding: 28px;
+  }
+
+  .features-grid {
+    gap: 20px;
+  }
+
+  .balance-card,
+  .cities-card,
+  .waitlist-card,
+  .github-card {
+    padding: 32px;
+  }
+
+  .cities-grid {
+    gap: 24px;
+  }
+
+  .opensource-container {
+    gap: 32px;
+  }
+
+  .waitlist-stats {
+    flex-direction: column;
+    gap: 12px;
   }
 }
