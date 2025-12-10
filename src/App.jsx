@@ -4,6 +4,7 @@ import Navigation from "./components/Navigation";
 import AboutPage from "./pages/AboutPage";
 import NewLandingPage from "./pages/NewLandingPage";
 import "./App.css";
+import ContactPage from "./pages/ContactPage";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<NewLandingPage />} />
           {/* <Route path="/" element={<LandingPage />} /> */}
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </div>
     </Router>

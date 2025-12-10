@@ -156,7 +156,11 @@
 .primary-button {
   display: flex;
   padding: 20px 32px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
   justify-content: center;
+  align-items: center;
   align-items: center;
   gap: 12px;
   border-radius: 16px;

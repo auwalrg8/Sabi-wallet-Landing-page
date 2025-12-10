@@ -17,7 +17,9 @@ const NewLandingPage = () => {
             <a href="#opensource" className="nav-link">
               Open Source
             </a>
-            <button className="nav-button">Join Waitlist</button>
+            <a href="#waitlist" className="nav-button">
+              Join Waitlist
+            </a>
           </nav>
         </div>
       </header>
@@ -30,7 +32,8 @@ const NewLandingPage = () => {
               <h1 className="hero-title">
                 Your
                 <br />
-                money{" "}
+                money
+                <br />
                 <span className="gradient-text">
                   na
                   <br />
@@ -44,7 +47,7 @@ const NewLandingPage = () => {
                 but 100% non-custodial. Built for Nigeria, by Nigerians.
               </p>
               <div className="hero-buttons">
-                <button className="primary-button">
+                <a href="#waitlist" className="primary-button">
                   Join the Waitlist
                   <svg
                     width="16"
@@ -58,8 +61,10 @@ const NewLandingPage = () => {
                       fill="#0C0C1A"
                     />
                   </svg>
-                </button>
-                <button className="secondary-button">See How it Works</button>
+                </a>
+                <a href="/about" className="secondary-button">
+                  Learn More
+                </a>
               </div>
             </div>
             <div className="hero-mockups">
@@ -466,7 +471,7 @@ const NewLandingPage = () => {
           </div>
         </section>
 
-        <section className="waitlist-section">
+        <section id="waitlist" className="waitlist-section">
           <div className="waitlist-gradient"></div>
           <div className="waitlist-container">
             <div className="waitlist-header">
@@ -481,10 +486,15 @@ const NewLandingPage = () => {
               </p>
             </div>
             <div className="waitlist-card">
-              <form className="waitlist-form">
+              <form
+                className="waitlist-form"
+                action="mailto:sabiwallet@gmail.com"
+                method="POST"
+                encType="text/plain"
+              >
                 <div className="form-row">
                   <div className="form-group">
-                    <label className="form-label">Full Name</label>
+                    <label className="form-label">Full Name:</label>
                     <input
                       type="text"
                       className="form-input"
@@ -492,7 +502,7 @@ const NewLandingPage = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label className="form-label">Phone Number</label>
+                    <label className="form-label">Phone Number:</label>
                     <input
                       type="tel"
                       className="form-input"
@@ -501,7 +511,7 @@ const NewLandingPage = () => {
                   </div>
                 </div>
                 <div className="form-group">
-                  <label className="form-label">City (Optional)</label>
+                  <label className="form-label">City (Optional):</label>
                   <select className="form-select">
                     <option>Select your city</option>
                     <option>Kaduna</option>
@@ -513,7 +523,7 @@ const NewLandingPage = () => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label className="form-label">Email (Optional)</label>
+                  <label className="form-label">Email (Optional):</label>
                   <input
                     type="email"
                     className="form-input"
@@ -529,6 +539,9 @@ const NewLandingPage = () => {
                     />
                   </svg>
                 </button>
+                <p className="form-note">
+                  We will send your waitlist request directly to sabiwallet@gmail.com.
+                </p>
               </form>
               <div className="waitlist-stats">
                 <div className="waitlist-stat">
@@ -559,7 +572,13 @@ const NewLandingPage = () => {
                 The Moniepoint of Bitcoin. Built for Nigeria, by Nigerians.
               </p>
               <div className="footer-socials">
-                <a href="#" className="social-link">
+                <a
+                  href="https://x.com/SabiWallet"
+                  className="social-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sabi Wallet on X"
+                >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
                       d="M14.3553 4.741C14.3655 4.88313 14.3655 5.02529 14.3655 5.16741C14.3655 9.50241 11.066 14.4973 5.03553 14.4973C3.17766 14.4973 1.45178 13.9593 0 13.0253C0.263969 13.0557 0.51775 13.0659 0.791875 13.0659C2.32484 13.0659 3.73603 12.5481 4.86294 11.6649C3.42131 11.6344 2.21319 10.6903 1.79694 9.39075C2 9.42119 2.20303 9.4415 2.41625 9.4415C2.71066 9.4415 3.00509 9.40088 3.27919 9.32985C1.77666 9.02525 0.649719 7.70547 0.649719 6.11157V6.07097C1.08625 6.31463 1.59391 6.46691 2.13194 6.48719C1.24869 5.89835 0.670031 4.89329 0.670031 3.75622C0.670031 3.1471 0.832438 2.58872 1.11672 2.10141C2.73094 4.09125 5.15734 5.39072 7.87813 5.53288C7.82738 5.28922 7.79691 5.03544 7.79691 4.78163C7.79691 2.9745 9.25884 1.50244 11.0761 1.50244C12.0203 1.50244 12.873 1.89838 13.472 2.53797C14.2131 2.39585 14.9238 2.12172 15.5533 1.7461C15.3096 2.50754 14.7918 3.14713 14.1116 3.55319C14.7715 3.48216 15.4111 3.29938 15.9999 3.0456C15.5533 3.69532 14.9949 4.27397 14.3553 4.741Z"
@@ -567,11 +586,34 @@ const NewLandingPage = () => {
                     />
                   </svg>
                 </a>
-                <a href="#" className="social-link">
+                <a
+                  href="https://github.com/auwalrg8/Sabi"
+                  className="social-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sabi Wallet on GitHub"
+                >
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path
                       d="M5.18437 12.4187C5.18437 12.4812 5.1125 12.5312 5.02187 12.5312C4.91875 12.5406 4.84688 12.4906 4.84688 12.4187C4.84688 12.3562 4.91875 12.3062 5.00938 12.3062C5.10313 12.2969 5.18437 12.3469 5.18437 12.4187ZM4.2125 12.2781C4.19063 12.3406 4.25313 12.4125 4.34688 12.4312C4.42813 12.4625 4.52187 12.4312 4.54063 12.3687C4.55938 12.3062 4.5 12.2344 4.40625 12.2063C4.325 12.1844 4.23438 12.2156 4.2125 12.2781ZM5.59375 12.225C5.50313 12.2469 5.44062 12.3063 5.45 12.3781C5.45937 12.4406 5.54063 12.4813 5.63438 12.4594C5.725 12.4375 5.7875 12.3781 5.77812 12.3156C5.76875 12.2563 5.68437 12.2156 5.59375 12.225ZM7.65 0.25C3.31563 0.25 0 3.54063 0 7.875C0 11.3406 2.18125 14.3063 5.29688 15.35C5.69688 15.4219 5.8375 15.175 5.8375 14.9719C5.8375 14.7781 5.82812 13.7094 5.82812 13.0531C5.82812 13.0531 3.64062 13.5219 3.18125 12.1219C3.18125 12.1219 2.825 11.2125 2.3125 10.9781C2.3125 10.9781 1.59687 10.4875 2.3625 10.4969C2.3625 10.4969 3.14062 10.5594 3.56875 11.3031C4.25312 12.5094 5.4 12.1625 5.84688 11.9563C5.91875 11.4563 6.12188 11.1094 6.34688 10.9031C4.6 10.7094 2.8375 10.4562 2.8375 7.45C2.8375 6.59062 3.075 6.15938 3.575 5.60938C3.49375 5.40625 3.22813 4.56875 3.65625 3.4875C4.30937 3.28437 5.8125 4.33125 5.8125 4.33125C6.4375 4.15625 7.10938 4.06563 7.775 4.06563C8.44063 4.06563 9.1125 4.15625 9.7375 4.33125C9.7375 4.33125 11.2406 3.28125 11.8938 3.4875C12.3219 4.57188 12.0563 5.40625 11.975 5.60938C12.475 6.1625 12.7812 6.59375 12.7812 7.45C12.7812 10.4656 10.9406 10.7063 9.19375 10.9031C9.48125 11.15 9.725 11.6187 9.725 12.3531C9.725 13.4062 9.71562 14.7094 9.71562 14.9656C9.71562 15.1687 9.85938 15.4156 10.2563 15.3438C13.3813 14.3062 15.5 11.3406 15.5 7.875C15.5 3.54063 11.9844 0.25 7.65 0.25ZM3.0375 11.0281C2.99687 11.0594 3.00625 11.1313 3.05938 11.1906C3.10938 11.2406 3.18125 11.2625 3.22187 11.2219C3.2625 11.1906 3.25312 11.1187 3.2 11.0594C3.15 11.0094 3.07812 10.9875 3.0375 11.0281ZM2.7 10.775C2.67813 10.8156 2.70937 10.8656 2.77187 10.8969C2.82187 10.9281 2.88438 10.9187 2.90625 10.875C2.92812 10.8344 2.89687 10.7844 2.83437 10.7531C2.77187 10.7344 2.72187 10.7437 2.7 10.775ZM3.7125 11.8875C3.6625 11.9281 3.68125 12.0219 3.75312 12.0813C3.825 12.1531 3.91562 12.1625 3.95625 12.1125C3.99688 12.0719 3.97813 11.9781 3.91563 11.9187C3.84688 11.8469 3.75313 11.8375 3.7125 11.8875ZM3.35625 11.4281C3.30625 11.4594 3.30625 11.5406 3.35625 11.6125C3.40625 11.6844 3.49062 11.7156 3.53125 11.6844C3.58125 11.6438 3.58125 11.5625 3.53125 11.4906C3.4875 11.4188 3.40625 11.3875 3.35625 11.4281Z"
                       fill="white"
+                    />
+                  </svg>
+                </a>
+                <a
+                  href="https://discord.gg/3gAArGWt"
+                  className="social-link"
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label="Sabi Wallet on Discord"
+                >
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <circle cx="8" cy="8" r="7" stroke="white" strokeWidth="1" />
+                    <path
+                      d="M5.5 6h1.5v4H5.5zM9 6h1.5v4H9z"
+                      stroke="white"
+                      strokeWidth="0.8"
+                      strokeLinecap="round"
                     />
                   </svg>
                 </a>
@@ -581,17 +623,32 @@ const NewLandingPage = () => {
               <h4 className="footer-section-title">Community</h4>
               <ul className="footer-links">
                 <li>
-                  <a href="#" className="footer-link">
+                  <a
+                    href="https://github.com/auwalrg8/Sabi"
+                    className="footer-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     GitHub
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="footer-link">
+                  <a
+                    href="https://x.com/SabiWallet"
+                    className="footer-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Twitter
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="footer-link">
+                  <a
+                    href="https://discord.gg/3gAArGWt"
+                    className="footer-link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Discord
                   </a>
                 </li>
@@ -601,12 +658,12 @@ const NewLandingPage = () => {
               <h4 className="footer-section-title">Company</h4>
               <ul className="footer-links">
                 <li>
-                  <a href="#" className="footer-link">
+                  <a href="/about" className="footer-link">
                     About
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="footer-link">
+                  <a href="/contact" className="footer-link">
                     Contact
                   </a>
                 </li>

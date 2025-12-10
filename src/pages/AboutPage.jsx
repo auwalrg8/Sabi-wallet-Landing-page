@@ -1,138 +1,84 @@
-import { motion } from 'framer-motion'
-import './AboutPage.css'
+import "./AboutPage.css"
 
-const AboutPage = () => {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
+const features = [
+  {
+    icon: "₦",
+    title: "Naira-First Experience",
+    description:
+      "See your balance in ₦ first. Long-press to reveal sats. Same familiar UX millions of Nigerians already trust.",
+  },
+  {
+    icon: "⚡",
+    title: "Instant Lightning & Nostr Zaps",
+    description:
+      "Send sats like WhatsApp messages. Dash tips on Nostr. All powered by Breez SDK Nodeless on Spark – no channels, no liquidity hassle.",
+  },
+  {
+    icon: "👥",
+    title: "Social Recovery – No Seed Phrase",
+    description:
+      "Pick 3 trusted guys to help recover your wallet. No more 12-word paper. Built for real Nigerians who lose phones every day.",
+  },
+]
 
-  const itemVariants = {
-    hidden: { x: -50, opacity: 0 },
-    visible: {
-      x: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.5,
-      },
-    },
-  }
+const highlightLines = [
+  "We started in Kaduna because we believe the North should lead Bitcoin adoption in Africa.",
+  "Hausa, Pidgin, Yoruba, Igbo – from day one.",
+  "USSD mode for mama on Nokia 3310.",
+  "100% open source (MIT license).",
+  "Built by Bitcoiners, for the next 200 million Africans.",
+]
 
-  const stats = [
-    { number: '100%', label: 'Non-Custodial' },
-    { number: '0', label: 'KYC Required' },
-    { number: '⚡', label: 'Lightning Fast' },
-    { number: '🇳🇬', label: 'Built in Nigeria' },
-  ]
+const AboutPage = () => (
+  <section className="about">
+    <div className="about-container">
+      <h2>About Sabi Wallet</h2>
+      <p className="about-subtitle">
+        Sabi Wallet is the first non-custodial Bitcoin + Lightning + Nostr wallet built in Kaduna,
+        Nigeria — designed to feel exactly like Moniepoint but with real self-sovereignty.
+      </p>
 
-  return (
-    <div className="about-page">
-      <motion.section
-        className="about-hero"
-        initial="hidden"
-        animate="visible"
-        variants={containerVariants}
-      >
-        <motion.h1 variants={itemVariants}>About Sabi Wallet</motion.h1>
-        <motion.p variants={itemVariants} className="about-intro">
-          We&apos;re building Nigeria&apos;s first truly non-custodial Bitcoin and Lightning wallet
-          that feels exactly like the payment apps you already know and love.
-        </motion.p>
-      </motion.section>
+      <div className="about-grid">
+        {features.map((feature) => (
+          <article key={feature.title} className="about-card">
+            <div className="about-icon">{feature.icon}</div>
+            <h3>{feature.title}</h3>
+            <p>{feature.description}</p>
+          </article>
+        ))}
+      </div>
 
-      <motion.section
-        className="mission-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
-      >
-        <motion.div className="mission-content" variants={itemVariants}>
-          <h2>Our Mission</h2>
-          <p>
-            To make Bitcoin as easy to use as sending airtime or receiving bank alerts.
-            We believe financial sovereignty shouldn&apos;t come with a steep learning curve.
-          </p>
-        </motion.div>
-
-        <motion.div className="vision-content" variants={itemVariants}>
-          <h2>Our Vision</h2>
-          <p>
-            A future where every Nigerian has full control over their money, without
-            needing to trust banks, exchanges, or any third party. Your keys, your
-            Bitcoin, forever.
-          </p>
-        </motion.div>
-      </motion.section>
-
-      <motion.section
-        className="stats-section"
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, amount: 0.3 }}
-        variants={containerVariants}
-      >
-        <h2>Why Choose Sabi?</h2>
-        <div className="stats-grid">
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              className="stat-card"
-              variants={itemVariants}
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="stat-number">{stat.number}</div>
-              <div className="stat-label">{stat.label}</div>
-            </motion.div>
+      <div className="about-highlight">
+        <h3>Made in Kaduna, for Nigeria &amp; Africa</h3>
+        <p className="highlight-description">
+          {highlightLines.map((line, index) => (
+            <span key={line}>
+              {line}
+              {index < highlightLines.length - 1 && <br />}
+            </span>
           ))}
-        </div>
-      </motion.section>
-
-      <motion.section
-        className="philosophy-section"
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <h2>Built for the Street, by the Street</h2>
-        <p>
-          We understand the Nigerian payment landscape because we live it every day.
-          We&apos;ve designed Sabi Wallet to feel familiar while offering something
-          revolutionary: true financial freedom through Bitcoin.
         </p>
-        <motion.div
-          className="feature-list"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
+        <a
+          href="https://github.com/sabiwallet"
+          target="_blank"
+          rel="noreferrer"
+          className="github-link"
         >
-          <motion.div variants={itemVariants} className="feature-item">
-            <span className="check-icon">✓</span>
-            <span>Feels like Moniepoint & OPay</span>
-          </motion.div>
-          <motion.div variants={itemVariants} className="feature-item">
-            <span className="check-icon">✓</span>
-            <span>P2P trading like NoOnes</span>
-          </motion.div>
-          <motion.div variants={itemVariants} className="feature-item">
-            <span className="check-icon">✓</span>
-            <span>Lightning Network integration</span>
-          </motion.div>
-          <motion.div variants={itemVariants} className="feature-item">
-            <span className="check-icon">✓</span>
-            <span>No seed phrases to memorize</span>
-          </motion.div>
-        </motion.div>
-      </motion.section>
+          View on GitHub →
+        </a>
+      </div>
+
+      <div className="about-cta">
+        <p className="cta-title">MVP drops April 2026</p>
+        <p className="cta-subtitle">
+          Kaduna beta first. Join the waitlist to be among the first Nigerians to test.
+        </p>
+        <a href="#waitlist" className="cta-button">
+          Join the Waitlist
+        </a>
+      </div>
     </div>
-  )
-}
+  </section>
+)
 
 export default AboutPage
