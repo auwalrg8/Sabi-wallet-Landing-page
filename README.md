@@ -1,6 +1,6 @@
 # Sabi Wallet Landing Page
 
-🇳🇬 Nigeria's first non-custodial Bitcoin + Lightning wallet that feels exactly like Moniepoint & OPay. Send sats as easily as you dash airtime. Receive like bank alert. Buy & sell BTC/USDT P2P like NoOnes. No seed phrase, no KYC, no custody — just your money, your keys, forever. Built for the street, by the street.
+🇳🇬 Nigeria's first non-custodial Bitcoin + Lightning wallet. Send sats as easily as you dash airtime. Receive like bank alert. Buy & sell BTC P2P, no KYC, no custody — just your money, your keys, forever. Built for the street, by the street.
 
 ## Features
 
