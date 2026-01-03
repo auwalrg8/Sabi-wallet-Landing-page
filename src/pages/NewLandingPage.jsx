@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NewLandingPage.css";
 import mockupLeft from "../../assets/images/Wallet mockup 1.png";
@@ -7,10 +7,31 @@ import mockupRight from "../../assets/images/Wallet mockup 1-1.png";
 const NewLandingPage = () => {
   const [activeFaq, setActiveFaq] = useState(null);
   const [showSats, setShowSats] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
   };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
+  // Prevent body scroll when menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMobileMenuOpen]);
 
   const faqData = [
     {
@@ -65,18 +86,36 @@ const NewLandingPage = () => {
             <span className="logo-text">Sabi</span>
             <span className="logo-btc">₿</span>
           </a>
-          <nav className="nav">
+          <nav className="nav desktop-nav">
             <a href="#features" className="nav-link">Features</a>
             <a href="#community" className="nav-link">Community</a>
             <a href="https://github.com/AuwalRG8/Sabi" className="nav-link" target="_blank" rel="noopener noreferrer">GitHub</a>
             <Link to="/about" className="nav-link">About</Link>
+            <Link to="/contact" className="nav-link">Contact</Link>
             <a href="#download" className="nav-button">Download Beta</a>
           </nav>
-          <button className="mobile-menu-btn" aria-label="Menu">
+          <button
+            className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
+            onClick={toggleMobileMenu}
+            aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+            aria-expanded={isMobileMenuOpen}
+          >
             <span></span>
             <span></span>
             <span></span>
           </button>
+        </div>
+
+        {/* Mobile Navigation Overlay */}
+        <div className={`mobile-nav-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
+          <nav className="mobile-nav">
+            <a href="#features" className="mobile-nav-link" onClick={closeMobileMenu}>Features</a>
+            <a href="#community" className="mobile-nav-link" onClick={closeMobileMenu}>Community</a>
+            <a href="https://github.com/AuwalRG8/Sabi" className="mobile-nav-link" target="_blank" rel="noopener noreferrer" onClick={closeMobileMenu}>GitHub</a>
+            <Link to="/about" className="mobile-nav-link" onClick={closeMobileMenu}>About</Link>
+            <Link to="/contact" className="mobile-nav-link" onClick={closeMobileMenu}>Contact</Link>
+            <a href="#download" className="mobile-nav-button" onClick={closeMobileMenu}>Download Beta</a>
+          </nav>
         </div>
       </header>
 
@@ -465,8 +504,8 @@ const NewLandingPage = () => {
               <div className="footer-section">
                 <h4 className="footer-section-title">Legal</h4>
                 <ul className="footer-links">
-                  <li><a href="#" className="footer-link">Privacy</a></li>
-                  <li><a href="#" className="footer-link">Terms</a></li>
+                  <li><Link to="/privacy" className="footer-link">Privacy</Link></li>
+                  <li><Link to="/terms" className="footer-link">Terms</Link></li>
                   <li><a href="https://github.com/AuwalRG8/Sabi/blob/main/LICENSE" className="footer-link" target="_blank" rel="noopener noreferrer">License (MIT)</a></li>
                 </ul>
               </div>

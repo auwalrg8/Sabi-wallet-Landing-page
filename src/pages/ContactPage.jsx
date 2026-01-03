@@ -11,15 +11,15 @@ const ContactPage = () => {
     event.preventDefault()
     setStatus(null)
     setIsSubmitting(true)
-    const formData = new FormData(event.target)
+
+    const form = event.target
+    const formData = new FormData(form)
     const payload = Object.fromEntries(formData.entries())
 
     try {
       const response = await fetch(CONTACT_API_URL, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       })
 
@@ -29,14 +29,15 @@ const ContactPage = () => {
 
       setStatus({
         type: "success",
-        message: "Message sent—expect a reply within one business day.",
+        message: "Message sent successfully! We'll reply within one business day.",
       })
-      event.target.reset()
+      form.reset()
     } catch (error) {
+      console.error("Form submission error:", error)
       setStatus({
         type: "error",
         message:
-          "Could not deliver your message. Please try again later or email sabibwallet@gmail.com directly.",
+          "Could not deliver your message. Please email sabibwallet@gmail.com directly.",
       })
     } finally {
       setIsSubmitting(false)

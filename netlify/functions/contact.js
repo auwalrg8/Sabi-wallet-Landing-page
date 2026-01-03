@@ -3,6 +3,7 @@
 // Sends contact form submissions to sabibwallet@gmail.com using Resend
 
 const RECIPIENT_EMAIL = "sabibwallet@gmail.com"
+const SENDER_EMAIL = "Sabi Wallet <contact@eeviedorei.resend.app>"
 
 const headers = {
   "Access-Control-Allow-Origin": "*",
@@ -51,7 +52,7 @@ exports.handler = async (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Sabi Wallet <noreply@sabiwallet.online>",
+        from: SENDER_EMAIL,
         to: RECIPIENT_EMAIL,
         reply_to: payload.email,
         subject: `[Sabi Contact] ${payload.subject || 'New message from ' + payload.name}`,
