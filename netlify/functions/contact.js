@@ -1,3 +1,4 @@
+/* eslint-env node */
 // contact.js – POST /api/contact
 // Sends contact form submissions to sabibwallet@gmail.com using Resend
 
